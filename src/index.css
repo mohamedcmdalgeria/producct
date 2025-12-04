@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes slideBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 2% 2%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+
+.animate-slide-bg {
+  animation: slideBackground 30s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatUp 6s ease-in-out infinite;
+}
