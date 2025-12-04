@@ -45,25 +45,25 @@ export default function HeroSection() {
 
       <div className="relative z-10 w-full px-6 md:px-8">
         <div className="container mx-auto">
-          <div className="max-w-2xl space-y-6 md:space-y-8">
+          <div className="max-w-2xl space-y-6 md:space-y-8 glass-effect-strong rounded-3xl p-8 md:p-12 lg:p-16">
             <div className="space-y-4 md:space-y-6">
-              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight">
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight animate-fade-in-up">
                 Discover our<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-teal-300 to-blue-300">
                   products
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-100 font-light max-w-xl leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-100 font-light max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
                 Fresh from Our Farmers, Directly to You
               </p>
 
-              <p className="text-base md:text-lg text-gray-200 max-w-2xl leading-relaxed opacity-90">
+              <p className="text-base md:text-lg text-gray-200 max-w-2xl leading-relaxed opacity-90 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 Discover local fruits, vegetables, and farm products while supporting Algeria's small producers
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 pt-4 md:pt-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 pt-4 md:pt-6 animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
               <button className="group relative px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-500 hover:to-teal-500 text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
                 Join us
                 <div className="absolute inset-0 rounded-lg bg-white opacity-0 group-hover:opacity-10 transition duration-300" />
@@ -85,7 +85,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="relative max-w-md pt-4 md:pt-6">
+            <div className="relative max-w-md pt-4 md:pt-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <input
                 type="text"
                 placeholder="Search for a product..."
@@ -97,7 +97,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
         <div className="flex flex-col items-center gap-3">
           <p className="text-white text-sm font-medium opacity-70">Scroll to explore</p>
           <ArrowDown className="w-5 h-5 text-white opacity-70 animate-bounce" />
