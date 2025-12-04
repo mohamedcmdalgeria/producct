@@ -1,20 +1,44 @@
 import { Search, MessageCircle, Instagram, Facebook, Linkedin, ArrowDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
+const HERO_IMAGES = [
+  'https://images.pexels.com/photos/2092906/pexels-photo-2092906.jpeg?auto=compress&cs=tinysrgb&w=2000&q=80',
+  'https://images.pexels.com/photos/5632634/pexels-photo-5632634.jpeg?auto=compress&cs=tinysrgb&w=2000&q=80',
+  'https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?auto=compress&cs=tinysrgb&w=2000&q=80',
+  'https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=2000&q=80',
+  'https://images.pexels.com/photos/3970711/pexels-photo-3970711.jpeg?auto=compress&cs=tinysrgb&w=2000&q=80',
+];
 
 export default function HeroSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+        setIsTransitioning(false);
+      }, 500);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source
-          src="https://videos.pexels.com/video-files/3571501/3571501-hd_1280_720_30fps.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <div className="absolute inset-0 w-full h-full">
+        {HERO_IMAGES.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Hero background ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+      </div>
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/50 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
